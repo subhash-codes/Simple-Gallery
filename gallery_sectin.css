@@ -1,0 +1,165 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family: sans-serif;
+
+}
+body{
+	background-color:black;
+}
+input{
+	display: none;
+}
+.container{
+	width: 100%;
+	text-align: center;
+}
+h1{
+	font-weight: bold	;
+	font-size: 35px;
+	position: relative;
+	margin: 40px 0;
+	color:white;
+}
+h1::before{
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 3px;
+	background-color: darkred;
+	bottom: -10px;
+	left: 50%;
+	transform:translateX(-50%);
+	animation:animate 4s linear infinite;
+}
+
+@keyframes animate{
+
+				0%{
+					width: 10px;
+				}
+				50%{
+					width: 100px;
+				}
+				100%{
+					width: 100px;
+				}
+
+}
+.top-container{
+	background-color: rgb(243,243,243);
+	width: 90%;
+	margin: 0 auto 20px auto;
+	height: 60px;
+	border-radius: 5px;
+	display: flex;
+	box-shadow: 3px,3px,5px lightgray;
+	align-items: center;
+
+}
+h3{
+	height: 100%;
+	background-color:lightblue;
+	line-height: 60px;
+	padding: 0 50px;
+	color: black;
+}
+label{
+	display: inline-block;
+	height: 100%;
+	
+	margin: 0 20px;
+	line-height: 40px;
+	font-size: 16px;
+	color:dimgray;
+	cursor: pointer;
+	transition: color .5s;
+	padding-top: 	11px;
+	font-weight:bold;	
+
+}
+label:hover{
+	color: green;
+
+}
+.Photo-Gallery{
+	/*width: 10%;*/
+	/*margin: auto;*/
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+
+	/*display:block;		*/
+
+
+}
+.pic{
+	position:relative;
+	/*height: 230px;*/
+	widows: 	100px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px lightgray;
+	cursor: pointer;
+	transition: 5s;
+}
+.pic:hover::before{
+	margin-top: 0;
+	opacity: 1;
+}
+#check1:checked~ .container .Photo-Gallery  .pic  {
+	opacity: 1;
+	transform: scale(1);
+	position: relative;
+	transition: .5s;
+
+}
+#check2:checked~  .container .Photo-Gallery  .family{
+	transform: scale(1);
+	opacity: 1;
+	position: relative;
+	transition: .5s;
+
+}
+#check2:checked~  .container .Photo-Gallery  .group,
+#check2:checked~  .container .Photo-Gallery  .child{
+
+	opacity: 0;
+	transform: scale(0);
+	position: absolute;
+	left:5px;
+	transition: .5s;
+	
+}
+#check3:checked~  .container .Photo-Gallery  .group{
+	transform: scale(1);
+	opacity: 1;
+	position: relative;
+	transition: .5s;
+
+}
+#check3:checked~  .container .Photo-Gallery  .family,
+#check3:checked~  .container .Photo-Gallery  .child{
+	transform: scale(0);
+	opacity: 0;
+	position: absolute;
+	transition: .5s;
+	
+}
+#check4:checked~  .container .Photo-Gallery  .child{
+	transform: scale(1);
+	opacity: 1;
+	position: relative;
+	transition: .5s;
+
+}
+
+
+#check4:checked~  .container  .Photo-Gallery  .family,
+#check4:checked~  .container  .Photo-Gallery  .group{
+	transform: scale(0);
+	opacity: 0;
+	position: absolute;
+	transition: .5s;
+	
+}
